@@ -7,6 +7,9 @@
 
 ---@type table<CodeCompanion.History.Pickers, CodeCompanion.History.PickerSpec>
 local picker_configs = {
+    mini = {
+        module = "mini",
+    },
     telescope = {
         module = "telescope",
     },
@@ -52,7 +55,7 @@ end
 ---@return CodeCompanion.History.Pickers resolved picker name
 local function get_history_picker()
     -- Priority order for history pickers
-    local providers = { "telescope", "fzf-lua", "snacks" }
+    local providers = { "telescope", "fzf-lua", "snacks", "mini" }
     return find_available_picker(providers, picker_configs, "default")
 end
 
