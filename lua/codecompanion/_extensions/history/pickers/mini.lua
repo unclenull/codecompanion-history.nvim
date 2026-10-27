@@ -30,7 +30,7 @@ function MiniPicker:browse()
         show = function(item)
             return self:format_entry(item)
         end,
-        choose = function(item)
+        on_choice = function(item)
             if item then
                 self.config.handlers.on_select(item)
             end
